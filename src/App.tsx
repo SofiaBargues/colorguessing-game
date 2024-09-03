@@ -26,20 +26,20 @@ function App() {
   const mainColor = winnerColor;
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center min-h-screen justify-center gap-5">
       <div
         style={{
           backgroundColor: winnerColor,
         }}
-        className={"h-[100px] w-[100px] rounded-lg " + mainColor}
+        className={"h-[400px] w-[400px] rounded-lg " + mainColor}
       ></div>
       <div>
         <button
           onClick={() => {
             if (button1 === mainColor) {
-              setIsCorrect("true");
+              setIsCorrect("Correct");
             } else {
-              setIsCorrect("false");
+              setIsCorrect("Incorrect");
             }
           }}
           className="bg-[#f1f1f1] m-1 px-2 rounded-sm border-[1px] border-[#c3c3c3]"
@@ -50,9 +50,9 @@ function App() {
           className="bg-[#f1f1f1] m-1 px-2 rounded-sm border-[1px] border-[#c3c3c3]"
           onClick={() => {
             if (button2 === mainColor) {
-              setIsCorrect("true");
+              setIsCorrect("Correct");
             } else {
-              setIsCorrect("false");
+              setIsCorrect("Incorrect");
             }
             console.log(isCorrect);
           }}
@@ -63,9 +63,9 @@ function App() {
           className="bg-[#f1f1f1] m-1 px-2 rounded-sm border-[1px] border-[#c3c3c3]"
           onClick={() => {
             if (button3 === mainColor) {
-              setIsCorrect("true");
+              setIsCorrect("Correct");
             } else {
-              setIsCorrect("false");
+              setIsCorrect("Incorrect");
             }
           }}
         >
