@@ -14,14 +14,14 @@ function colorRandom() {
 }
 
 function App() {
-  const [button1, setButton1] = useState(colorRandom());
-  const [button2, setButton2] = useState(colorRandom());
-  const [button3, setButton3] = useState(colorRandom());
+  const [button1] = useState(colorRandom());
+  const [button2] = useState(colorRandom());
+  const [button3] = useState(colorRandom());
   const [isCorrect, setIsCorrect] = useState("");
 
   const arrButtons = [button1, button2, button3];
 
-  const [winnerColor, setWinnerColor] = useState(elementRandom(arrButtons));
+  const [winnerColor] = useState(elementRandom(arrButtons));
 
   const mainColor = winnerColor;
 
