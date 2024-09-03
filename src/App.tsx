@@ -7,15 +7,10 @@ function elementRandom(elementos: string[]) {
 }
 
 function colorRandom() {
-  const colorsHex = [
-    "#FF0000",
-    "#00FF00",
-    "#0000FF",
-    "#FFFF00",
-    "#FFA500",
-    "#800080",
-  ];
-  return elementRandom(colorsHex);
+  const randomColor = Math.floor(Math.random() * 16777216);
+  const hexColor = "#" + randomColor.toString(16).padStart(6, "0");
+
+  return hexColor;
 }
 
 function App() {
@@ -36,7 +31,7 @@ function App() {
         style={{
           backgroundColor: winnerColor,
         }}
-        className={"h-[100px] w-[100px] " + mainColor}
+        className={"h-[100px] w-[100px] rounded-lg " + mainColor}
       ></div>
       <div>
         <button
@@ -47,12 +42,12 @@ function App() {
               setIsCorrect("false");
             }
           }}
-          className="bg-slate-300 m-3"
+          className="bg-[#f1f1f1] m-1 px-2 rounded-sm border-[1px] border-[#c3c3c3]"
         >
           {button1}
         </button>
         <button
-          className="bg-slate-300 m-3"
+          className="bg-[#f1f1f1] m-1 px-2 rounded-sm border-[1px] border-[#c3c3c3]"
           onClick={() => {
             if (button2 === mainColor) {
               setIsCorrect("true");
@@ -65,7 +60,7 @@ function App() {
           {button2}
         </button>
         <button
-          className="bg-slate-300 m-3"
+          className="bg-[#f1f1f1] m-1 px-2 rounded-sm border-[1px] border-[#c3c3c3]"
           onClick={() => {
             if (button3 === mainColor) {
               setIsCorrect("true");
