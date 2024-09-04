@@ -14,14 +14,14 @@ function colorRandom() {
 }
 
 function App() {
-  const [button1] = useState(colorRandom());
-  const [button2] = useState(colorRandom());
-  const [button3] = useState(colorRandom());
+  const [button1, setButton1] = useState(colorRandom());
+  const [button2, setButton2] = useState(colorRandom());
+  const [button3, setButton3] = useState(colorRandom());
   const [isCorrect, setIsCorrect] = useState("");
 
   const arrButtons = [button1, button2, button3];
 
-  const [winnerColor] = useState(elementRandom(arrButtons));
+  const [winnerColor, setWinnerColor] = useState(elementRandom(arrButtons));
 
   const mainColor = winnerColor;
 
@@ -73,6 +73,19 @@ function App() {
         </button>
       </div>
       <div>{isCorrect}</div>
+      <button
+        className="bg-[#f1f1f1] m-1 px-2 rounded-sm border-[1px] border-[#c3c3c3]"
+        onClick={() => {
+          const newsArrButtons = [colorRandom(), colorRandom(), colorRandom()];
+          setButton1(newsArrButtons[0]);
+          setButton2(newsArrButtons[1]);
+          setButton3(newsArrButtons[2]);
+          setWinnerColor(elementRandom(newsArrButtons));
+          setIsCorrect("");
+        }}
+      >
+        Play again
+      </button>
     </div>
   );
 }
